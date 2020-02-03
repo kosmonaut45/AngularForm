@@ -19,23 +19,7 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
-  .inupt-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  mat-slider {
+    width: 500px;
   }
-  
-  .input-full-width {
-    width: 10%;
-  }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
-
-    input[type=number] {
-        -moz-appearance:textfield;
-    }
   

@@ -14,7 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from "@angular/material"; 
+import { MatNativeDateModule } from "@angular/material";
+import { SummaryComponent } from './loan-calculator-container/summary/summary.component';
+import { MatListModule } from '@angular/material/list'; 
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { MatNativeDateModule } from "@angular/material";
     LoanCalculatorContainerComponent,
     PersonalDetailsComponent,
     LoanDetailsComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { MatNativeDateModule } from "@angular/material";
     MatFormFieldModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatListModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
