@@ -1,18 +1,17 @@
 <h3>Kliento duomenys:</h3>
 <form class="input-form">
     <mat-form-field class="input-full-width">
-      <input matInput placeholder="Vardas*" value="">
+      <input matInput placeholder="Vardas" value="" required>
     </mat-form-field>
      <mat-form-field class="input-full-width">
-      <input matInput placeholder="Pavardė*" value="">
+      <input matInput placeholder="Pavardė" value="" required>
     </mat-form-field>
     <mat-form-field class="input-full-width">
-      <input matInput placeholder="Asmens kodas*" value="">
+      <input matInput placeholder="Asmens kodas" value="" required>
     </mat-form-field>
 <h3>Papildomi duomenys:</h3>
 <mat-form-field>
-    <mat-select placeholder="Išsilavinimas*">
-      <mat-option value="tuscia"></mat-option>
+    <mat-select placeholder="Išsilavinimas" required>
       <mat-option value="pradinis">Pradinis</mat-option>
       <mat-option value="vidurinis">Vidurinis</mat-option>
       <mat-option value="spec. vidurinis">Spec. Vidurinis</mat-option>
@@ -21,8 +20,7 @@
     </mat-select>
 </mat-form-field>
     <mat-form-field>
-        <mat-select placeholder="Užimamos pareigos*">
-          <mat-option value="tuscia"></mat-option>
+        <mat-select placeholder="Užimamos pareigos" required>
           <mat-option value="darbininkas">Darbininkas</mat-option>
           <mat-option value="specialistas, tarnautojas">Specialistas, tarnautojas</mat-option>
           <mat-option value="vyr. specialistas">Vyr. specialistas</mat-option>
@@ -37,8 +35,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-select placeholder="Įstaigos, kurioje dirbate, veiklos sritis *">
-          <mat-option value="tuscia"></mat-option>
+        <mat-select placeholder="Įstaigos, kurioje dirbate, veiklos sritis" required>
           <mat-option value="zemes ukis">Žemės Ūkis</mat-option>
           <mat-option value="statyba, apdirbamoji pramone">Statyba, apdirbamoji pramonė</mat-option>
           <mat-option value="pramone">Pramonė</mat-option>
@@ -54,8 +51,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-select placeholder="Darbo trukmė esamoje darbovietėje *">
-          <mat-option value="tuscia"></mat-option>
+        <mat-select placeholder="Darbo trukmė esamoje darbovietėje" required>
           <mat-option value="bandomasis laikotarpis">Bandomasis laikotarpis</mat-option>
           <mat-option value="iki 1 metu">Iki 1 metu</mat-option>
           <mat-option value="iki 2 metu">Iki 2 metu</mat-option>
@@ -67,16 +63,19 @@
     </mat-form-field>
 <h3>Asmeniniai duomenys:</h3>
     <mat-form-field>
-        <mat-select placeholder="Darbo sutarties tipas*">
-          <mat-option value="tuscia"></mat-option>
+        <mat-select placeholder="Darbo sutarties tipas" required>
           <mat-option value="neterminuota">Neterminuota</mat-option>
           <mat-option value="terminuota">Terminuota</mat-option>
           <mat-option value="kita">Kita</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <mat-select placeholder="Šeimyninė padėtis*">
-              <mat-option value="tuscia"></mat-option>
+            <input matInput [matDatepicker]="picker" placeholder="Pasirinkite datą" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>         
+        <mat-form-field>
+            <mat-select placeholder="Šeimyninė padėtis" required>
               <mat-option value="vedes (istekejusi)">Vedęs (ištekėjusi)</mat-option>
               <mat-option value="nevedes (netekejusi)">Nevedęs (netekėjusi)</mat-option>
               <mat-option value="bendras gyvenimas nesusituokus">Bendras gyvenimas nesusituokus</mat-option>
@@ -86,6 +85,6 @@
         </mat-form-field>
 <h3>Kontaktiniai duomenys:</h3>
     <mat-form-field class="input-full-width">
-      <input matInput placeholder="Telefonas*" value="">
+      <input matInput placeholder="Telefonas" value="" required>
     </mat-form-field>
 </form>
