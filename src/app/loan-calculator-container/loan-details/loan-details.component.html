@@ -1,0 +1,33 @@
+<mat-progress-bar mode="determinate" value="33"></mat-progress-bar>
+<p>Pasirinkite norimą paskolos sumą:</p>
+<mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="500"
+  min="100"
+  max="10000"
+  step="50"></mat-slider>
+
+<p>Pasirinkite paskolos terminą:</p>
+<mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="3"
+  min="6"
+  max="72"
+  step="1"></mat-slider>
+
+    <mat-form-field>
+        <mat-select placeholder="Paskolos mokėjimo diena*">
+          <mat-option value="tuscia"></mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="7">7</mat-option>
+          <mat-option value="12">12</mat-option>
+          <mat-option value="17">17</mat-option>
+          <mat-option value="22">22</mat-option>
+          <mat-option value="27">27</mat-option>
+        </mat-select>
+    </mat-form-field>
+        <mat-form-field class="input-full-width">
+          <input matInput placeholder="Mėnesis atlyginimas (bruto)*" value="">
+        </mat-form-field>
