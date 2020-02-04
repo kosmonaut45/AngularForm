@@ -16,7 +16,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material";
 import { SummaryComponent } from './loan-calculator-container/summary/summary.component';
-import { MatListModule } from '@angular/material/list'; 
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table'; 
+import { AppRoutingModule } from './app-routing.module'; 
+
+import {MatStepperModule} from '@angular/material/stepper'; 
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +46,12 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    AppRoutingModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

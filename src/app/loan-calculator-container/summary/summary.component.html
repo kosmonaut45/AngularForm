@@ -1,8 +1,27 @@
 <h3>Santrauka</h3>
-<mat-list role="list">
-    <mat-list-item role="listitem">Paskolos suma ... EUR</mat-list-item>
-    <mat-list-item role="listitem">Paskolos terminas ... mėn</mat-list-item>
-    <mat-list-item role="listitem">Mėnesinis atlyginimas atskaičius mokesčius ... EUR</mat-list-item>
-    <mat-list-item role="listitem">Telefonas</mat-list-item>
-  </mat-list>
+<div>
+  <table mat-table [dataSource]="figures">
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Paraiškos detalės </th>
+      <td mat-cell *matCellDef="let figure"> {{figure.description}} </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
+    </ng-container>
 
+    <!-- Data Column -->
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let figure"> {{figure.data}} </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+
+<div style='margin-top:  2rem'>
+  <button mat-stroked-button matStepperPrevious color="primary">Grįžti</button>
+  <button mat-stroked-button color="primary">Pateikti paraišką</button>
+</div>

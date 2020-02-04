@@ -1,90 +1,117 @@
 <h3>Kliento duomenys:</h3>
-<form class="input-form">
+<form class="input-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
     <mat-form-field class="input-full-width">
-      <input type="text" matInput placeholder="Vardas" value="" required>
+      <input type="text" matInput placeholder="Vardas" value="" required formControlName="name">
     </mat-form-field>
-     <mat-form-field class="input-full-width">
-      <input type="text" matInput placeholder="Pavardė" value="" required>
-    </mat-form-field>
+  </div>
+  <div>
     <mat-form-field class="input-full-width">
-      <input type="number" matInput placeholder="Asmens kodas" value="" required>
+      <input type="text" matInput placeholder="Pavardė" value="" required formControlName="surname">
     </mat-form-field>
-<h3>Papildomi duomenys:</h3>
-<mat-form-field>
-    <mat-select placeholder="Išsilavinimas" required>
-      <mat-option value="pradinis">Pradinis</mat-option>
-      <mat-option value="vidurinis">Vidurinis</mat-option>
-      <mat-option value="spec. vidurinis">Spec. Vidurinis</mat-option>
-      <mat-option value="aukstesnysis">Aukštesnysis</mat-option>
-      <mat-option value="aukstasis">Aukštasis</mat-option>
-    </mat-select>
-</mat-form-field>
-    <mat-form-field>
-        <mat-select placeholder="Užimamos pareigos" required>
-          <mat-option value="darbininkas">Darbininkas</mat-option>
-          <mat-option value="specialistas, tarnautojas">Specialistas, tarnautojas</mat-option>
-          <mat-option value="vyr. specialistas">Vyr. specialistas</mat-option>
-          <mat-option value="vadovas (skyriaus, padalinio)">Vadovas (skyriaus, padalinio)</mat-option>
-          <mat-option value="imones vadovas">Įmonės vadovas</mat-option>
-          <mat-option value="savininkas">Savininkas</mat-option>
-          <mat-option value="individuali veikla">Individuali veikla</mat-option>
-          <mat-option value="studentas">Studentas</mat-option>
-          <mat-option value="pensininkas">Pensininkas</mat-option>
-          <mat-option value="namu seimininke">Namų šeimininkė</mat-option>
-          <mat-option value="niekur nedirbu">Niekur nedirbu</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-select placeholder="Įstaigos, kurioje dirbate, veiklos sritis" required>
-          <mat-option value="zemes ukis">Žemės Ūkis</mat-option>
-          <mat-option value="statyba, apdirbamoji pramone">Statyba, apdirbamoji pramonė</mat-option>
-          <mat-option value="pramone">Pramonė</mat-option>
-          <mat-option value="prekyba, aptarnavimas">Prekyba, aptarnavimas</mat-option>
-          <mat-option value="transportas, pervezimas, rysiai">Transportas, pervežimas, ryšiai</mat-option>
-          <mat-option value="finansinis tarpininkavimas">Finansinis tarpininkavimas</mat-option>
-          <mat-option value="svietimas, kultura">Švietimas, kultūra</mat-option>
-          <mat-option value="nekilnojamas turtas, nuoma">Nekilnojamas turtas, nuoma</mat-option>
-          <mat-option value="informacines technologijos">Informacines technologijos</mat-option>
-          <mat-option value="teisinis tarpininkavimas, auditas">Teisinis tarpininkavimas, auditas</mat-option>
-          <mat-option value="sveikatos apsauga ir socialinis darbas">Sveikatos apsauga ir socialinis darbas</mat-option>
-          <mat-option value="valstybes valdymas ir gynimas">Valstybes valdymas ir gynimas</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-select placeholder="Darbo trukmė esamoje darbovietėje" required>
-          <mat-option value="bandomasis laikotarpis">Bandomasis laikotarpis</mat-option>
-          <mat-option value="iki 1 metu">Iki 1 metu</mat-option>
-          <mat-option value="iki 2 metu">Iki 2 metu</mat-option>
-          <mat-option value="iki 3 metu">Iki 3 metu</mat-option>
-          <mat-option value="iki 4 metu">Iki 4 metu</mat-option>
-          <mat-option value="iki 5 metu">Iki 5 metu</mat-option>
-          <mat-option value="virs 5 metu">Virš 5 metu</mat-option>          
-        </mat-select>
-    </mat-form-field>
-<h3>Asmeniniai duomenys:</h3>
-    <mat-form-field>
-        <mat-select placeholder="Darbo sutarties tipas" required>
-          <mat-option value="neterminuota">Neterminuota</mat-option>
-          <mat-option value="terminuota">Terminuota</mat-option>
-          <mat-option value="kita">Kita</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Pasirinkite datą" required>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>         
-        <mat-form-field>
-            <mat-select placeholder="Šeimyninė padėtis" required>
-              <mat-option value="vedes (istekejusi)">Vedęs (ištekėjusi)</mat-option>
-              <mat-option value="nevedes (netekejusi)">Nevedęs (netekėjusi)</mat-option>
-              <mat-option value="bendras gyvenimas nesusituokus">Bendras gyvenimas nesusituokus</mat-option>
-              <mat-option value="issiskyres (-usi)">Išsiskyręs (-usi)</mat-option>
-              <mat-option value="naslys (-e)">Našlys (-ė)</mat-option>
-            </mat-select>
-        </mat-form-field>
-<h3>Kontaktiniai duomenys:</h3>
+  </div>
+  <div>
     <mat-form-field class="input-full-width">
-      <input type="number" matInput placeholder="Telefonas" value="" required>
+      <input type="number" matInput placeholder="Asmens kodas" value="" required formControlName="personalNumber">
     </mat-form-field>
+  </div>
+  <h3>Papildomi duomenys:</h3>
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Išsilavinimas" required formControlName="education">
+        <mat-option value="education1">Pradinis</mat-option>
+        <mat-option value="education2">Vidurinis</mat-option>
+        <mat-option value="education3">Spec. Vidurinis</mat-option>
+        <mat-option value="education4">Aukštesnysis</mat-option>
+        <mat-option value="education5">Aukštasis</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Užimamos pareigos" required formControlName="position" [(value)]="job">
+        <mat-option value="job1">Darbininkas</mat-option>
+        <mat-option value="job2">Specialistas, tarnautojas</mat-option>
+        <mat-option value="job3">Vyr. specialistas</mat-option>
+        <mat-option value="job4">Vadovas (skyriaus, padalinio)</mat-option>
+        <mat-option value="job5">Įmonės vadovas</mat-option>
+        <mat-option value="job6">Savininkas</mat-option>
+        <mat-option value="job7">Individuali veikla</mat-option>
+        <mat-option value="job8">Studentas</mat-option>
+        <mat-option value="job9">Pensininkas</mat-option>
+        <mat-option value="job10">Namų šeimininkė</mat-option>
+        <mat-option value="job11">Niekur nedirbu</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field *ngIf="checkJob()">
+      <mat-select placeholder="Įstaigos, kurioje dirbate, veiklos sritis" formControlName="jobType" [(value)]="jobType">
+        <mat-option value="type1">Žemės Ūkis</mat-option>
+        <mat-option value="type2">Statyba, apdirbamoji pramonė</mat-option>
+        <mat-option value="type3">Pramonė</mat-option>
+        <mat-option value="type4">Prekyba, aptarnavimas</mat-option>
+        <mat-option value="type5">Transportas, pervežimas, ryšiai</mat-option>
+        <mat-option value="type6">Finansinis tarpininkavimas</mat-option>
+        <mat-option value="type6">Švietimas, kultūra</mat-option>
+        <mat-option value="type7">Nekilnojamas turtas, nuoma</mat-option>
+        <mat-option value="type8">Informacines technologijos</mat-option>
+        <mat-option value="type9">Teisinis tarpininkavimas, auditas</mat-option>
+        <mat-option value="type10">Sveikatos apsauga ir socialinis darbas</mat-option>
+        <mat-option value="type11">Valstybes valdymas ir gynimas</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field *ngIf="checkJob()">
+      <mat-select placeholder="Darbo trukmė esamoje darbovietėje" formControlName="jobTime">
+        <mat-option value="bandomasis laikotarpis">Bandomasis laikotarpis</mat-option>
+        <mat-option value="time1">Iki 1 metų</mat-option>
+        <mat-option value="time2">Iki 2 metų</mat-option>
+        <mat-option value="time3">Iki 3 metų</mat-option>
+        <mat-option value="time4">Iki 4 metų</mat-option>
+        <mat-option value="time5">Iki 5 metų</mat-option>
+        <mat-option value="time6">Virš 5 metų</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <h3>Asmeniniai duomenys:</h3>
+  <div>
+    <mat-form-field *ngIf="checkJob()">
+      <mat-select placeholder="Darbo sutarties tipas" [(value)]="contractType" formControlName="jobContractType">
+        <mat-option value="contract1">Neterminuota</mat-option>
+        <mat-option value="contract2">Terminuota</mat-option>
+        <mat-option value="contract3">Kita</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field *ngIf="checkJob() && contractType === 'contract2'">
+      <input matInput [matDatepicker]="picker" placeholder="Pasirinkite sutarties pabaigos datą" formControlName="date"
+        [(value)]="jobTime">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Šeimyninė padėtis" required formControlName="family">
+        <mat-option value="family1">Vedęs (ištekėjusi)</mat-option>
+        <mat-option value="family2">Nevedęs (netekėjusi)</mat-option>
+        <mat-option value="family3">Bendras gyvenimas nesusituokus</mat-option>
+        <mat-option value="family4">Išsiskyręs (-usi)</mat-option>
+        <mat-option value="family5">Našlys (-ė)</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <h3>Kontaktiniai duomenys:</h3>
+  <div>
+    <mat-form-field class="input-full-width">
+      <input type="text" matInput placeholder="Telefonas" value="" required formControlName="telephoneNumber">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-stroked-button matStepperPrevious color="primary">Grįžti</button>
+    <button type="submit" mat-stroked-button [disabled]="isDisabled()" matStepperNext color="primary">Kitas</button>
+  </div>
 </form>

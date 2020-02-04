@@ -1,5 +1,11 @@
-<h1>Paskolos paraiška</h1>
-<app-loan-details></app-loan-details>
-<app-personal-details></app-personal-details>
-<app-summary></app-summary>
-
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step label="Paskolos paraiška">
+        <app-loan-details></app-loan-details>
+    </mat-step>
+    <mat-step label="Asmens duomenys">
+        <app-personal-details></app-personal-details>
+    </mat-step>
+    <mat-step label="Apibendrinimas">
+        <app-summary></app-summary>
+    </mat-step>
+</mat-horizontal-stepper>
